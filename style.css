@@ -1,0 +1,201 @@
+/* styles.css - Dark Fantasy Terminal Theme */
+
+body {
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Grand Heading */
+.grand-heading {
+    font-size: 3rem;
+    /* Large, dramatic size */
+    letter-spacing: 0.1em;
+    /* Extra spacing between letters */
+    color: #ff5500;
+    /* Glowing ember orange */
+    text-shadow:
+        0 0 5px rgba(255, 85, 0, 0.7),
+        0 0 10px rgba(255, 85, 0, 0.5),
+        0 0 20px rgba(255, 170, 0, 0.4);
+    /* Multi-layer glow */
+    margin-bottom: 1.5rem;
+    /* Space below the heading */
+    text-align: center;
+    font-weight: bold;
+}
+
+form {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    color: #ffa94d;
+}
+
+select,
+input[type="checkbox"] {
+    margin: 0.5rem 0;
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #262626;
+    color: #f5f5f5;
+    border: 1px solid #ff5500;
+}
+
+input[type="checkbox"] {
+    accent-color: #ff5500;
+    margin-right: 0.5rem;
+}
+
+button {
+    margin-top: 1.5rem;
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e04800;
+}
+
+#prompt-output {
+    margin: 1rem 0;
+    font-style: italic;
+    color: #ffcc99;
+    text-align: center;
+}
+
+#monster-image {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    border: 2px solid #ff5500;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.4);
+}
+
+#preview-container {
+    max-width: 512px;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.3);
+}
+
+#history-container {
+    display: grid;
+    gap: 0.75rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 0.5rem;
+}
+
+#history-container>div {
+    background: #1a1a1a;
+    border: 1px solid #ff5500;
+    border-radius: 6px;
+    text-align: center;
+    padding: 0.5rem;
+    width: 140px;
+    /* forces uniform card size */
+}
+
+#history-container img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    /* hint that it’s clickable */
+}
+
+/* Lightbox Modal Base */
+#lightbox-modal.hidden {
+    display: none;
+}
+
+#lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+    /* hidden state defaults */
+}
+
+#lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+#lightbox-content {
+    position: relative;
+    background: #1a1a1a;
+    padding: 1rem;
+    border: 2px solid #ff5500;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffcc99;
+    z-index: 1001;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+}
+
+#lightbox-close {
+    margin-top: 0.5rem;
+    background: #ff5500;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* When showing the modal, remove .hidden */
+#lightbox-modal.visible {
+    display: flex;
+    pointer-events: auto;
+}

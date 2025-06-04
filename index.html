@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>monster-generator</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Grand, styled heading -->
+    <h1 class="grand-heading">🔮 Monster Summoner</h1>
+    <!-- index.html -->
+    <form id="monster-form">
+        <label>Base Type:
+            <select id="base-type">
+                <option value="dragon">Dragon</option>
+                <option value="werewolf">Werewolf</option>
+                <option value="wyvern">Wyvern</option>
+                <option value="vampire">Vampire</option>
+                <option value="Chimera">Chimera</option>
+                <option value="dreadshade">Dreadshade</option>
+                <option value="nightmaw">Nightmaw</option>
+                <option value="windigo">Windigo</option>
+                <option value="basilisk">Basilisk</option>
+                <option value="grottrol">Grottrol</option>
+                <option value="moonfang-siren">Moonfang Siren</option>
+            </select>
+        </label><br />
+
+        <label>Features (select all that apply):</label><br />
+        <input type="checkbox" name="feature" value="wings" /> Wings<br />
+        <input type="checkbox" name="feature" value="horns" /> Horns<br />
+        <input type="checkbox" name="feature" value="fur" /> Fur<br />
+        <input type="checkbox" name="feature" value="claws" /> Claws<br />
+        <input type="checkbox" name="feature" value="fangs" /> Fangs<br />
+
+        <button type="submit">Generate Monster</button>
+    </form>
+
+    <div id="preview-container">
+        <p id="prompt-output"></p>
+        <img id="monster-image" style="max-width: 400px; display: none;" />
+        <button id="download-btn" style="display: none;">Download Monster</button>
+    </div>
+
+    <!-- index.html -->
+    <!-- …existing code above… -->
+
+    <div id="history-section">
+        <h2>🔮 Monster History</h2>
+        <div id="history-container"></div>
+    </div>
+
+    <!-- Lightbox Modal (hidden by default) -->
+    <div id="lightbox-modal" class="hidden">
+        <div id="lightbox-backdrop"></div>
+        <div id="lightbox-content">
+            <img id="lightbox-image" src="" alt="Monster Preview" />
+            <p id="lightbox-caption"></p>
+            <button id="lightbox-close">Close</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
