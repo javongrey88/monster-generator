@@ -199,3 +199,122 @@ button:hover {
     display: flex;
     pointer-events: auto;
 }
+
+/* ---------------------------------------------
+   Mobile Optimization (≤600px wide)
+   --------------------------------------------- */
+@media (max-width: 600px) {
+
+    /* 1. Shrink the big “🔮 Monster Summoner” heading */
+    .grand-heading {
+        font-size: 2rem;
+        /* smaller font-size */
+        letter-spacing: 0.05em;
+        /* a bit less spacing */
+        margin-bottom: 1rem;
+        /* less vertical gap */
+    }
+
+    /* 2. Reduce padding inside the form and make it full‐width */
+    form {
+        padding: 1rem;
+        /* less internal padding */
+        width: 100%;
+        /* fill the screen */
+        margin-bottom: 1.5rem;
+    }
+
+    /* 3. Scale down labels & inputs slightly */
+    label {
+        font-size: 0.9rem;
+        /* a bit smaller text */
+    }
+
+    select {
+        font-size: 0.9rem;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1);
+        /* keep checkboxes from becoming too large */
+    }
+
+    /* 4. Shrink the “Generate Monster” button's padding/font */
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* 5. Make the preview container fit the screen */
+    #preview-container {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    #monster-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 6. Adjust prompt text size */
+    #prompt-output {
+        font-size: 0.9rem;
+        margin: 0.75rem 0;
+    }
+
+    /* 7. Collapse the history grid to fewer columns */
+    #history-container {
+        /* instead of auto‐fill(minmax(140px, 1fr)), force 2 columns */
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 0.5rem;
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    #history-container>div {
+        width: 100%;
+        /* let each card stretch its grid cell */
+        margin: 0;
+        /* grid‐gap handles spacing */
+        padding: 0.4rem;
+    }
+
+    #history-container img {
+        margin-bottom: 0.3rem;
+    }
+
+    /* 8. Shrink the lightbox close button & caption for small screens */
+    #lightbox-content {
+        padding: 0.75rem;
+    }
+
+    #lightbox-caption {
+        font-size: 0.9rem;
+    }
+
+    #lightbox-close {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ─────────────────────────────────────────────────
+     EXTRA TWEAKS (Optional)
+     ───────────────────────────────────────────────── */
+
+/* A) Further reduce body padding on very small screens */
+body {
+    padding: 1rem;
+    /* instead of 2rem */
+}
+
+/* B) Make fieldset (checkbox group) into two‐column grid */
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+}
+
+/* end of @media (max-width: 600px) */
